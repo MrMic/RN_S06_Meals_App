@@ -2,7 +2,7 @@
 import { Platform, Pressable, StyleSheet, Text, View } from "react-native";
 
 function CategoryGridTile({ title, color, onPress }) {
-  // HACK: Give access to the navigation onject through this hook
+  // NOTE: Give access to the navigation object through this hook
   // const navigation = useNavigation();
 
   return (

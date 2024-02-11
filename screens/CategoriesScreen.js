@@ -21,6 +21,7 @@ function CategoriesScreen({ navigation }) {
       />
     );
   }
+
   return (
     <FlatList
       data={CATEGORIES}
