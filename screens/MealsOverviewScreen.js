@@ -2,10 +2,11 @@
 // import { useRoute } from "@react-navigation/native";
 
 import { FlatList, StyleSheet, View } from "react-native";
-import { MEALS } from "../data/dummy-data";
+import { MEALS, CATEGORIES } from "../data/dummy-data";
 import MealItem from "../components/MealItem";
+import { useLayoutEffect } from "react";
 
-function MealsOverviewScreen({ route }) {
+function MealsOverviewScreen({ route, navigation }) {
   // ________________ NOTE: One can use this hook instead ________________
   // const route = useRoute();
 
@@ -13,6 +14,12 @@ function MealsOverviewScreen({ route }) {
   const displayedMeals = MEALS.filter((mealItem) => {
     return mealItem.categoryIds.indexOf(catId) >= 0;
   });
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      title: CATEGORIES.find((category) => category.id === catId).title,
+    });
+  }, [catId, navigation]);
 
   // ______________________________________________________________________
   function renderMealItem(itemData) {
