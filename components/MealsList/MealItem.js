@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import MealDetails from "../MealDetails";
 
+// ══════════════════════════════════════════════════════════════════════
 function MealItem({
   id,
   title,
@@ -18,12 +19,14 @@ function MealItem({
   affordability,
 }) {
   const navigation = useNavigation();
+
+  // ______________________________________________________________________
   function selectMealItemHandler() {
     navigation.navigate("MealDetail", {
       mealId: id,
     });
   }
-  // ______________________________________________________________________
+
   return (
     <View style={styles.mealItem}>
       <Pressable

@@ -2,6 +2,7 @@ import { FlatList, StyleSheet, View } from "react-native";
 
 import MealItem from "./MealItem";
 
+// ══════════════════════════════════════════════════════════════════════
 function MealsList({ items }) {
   // ______________________________________________________________________
   function renderMealItem(itemData) {
